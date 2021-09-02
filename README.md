@@ -5,5 +5,6 @@ Simple login, register app with to do list as a final profile result
 
 ![image](https://user-images.githubusercontent.com/62765687/131817756-481758b1-1ddf-474f-a870-2317295805e4.png)
 
-![image](https://user-images.githubusercontent.com/62765687/131817799-b3059288-cc74-4d2a-a38f-aaa4633fceca.png)
+![image](https://user-images.githubusercontent.com/62765687/131818054-03a5cad8-a82c-421b-b087-fc67acdd1854.png)
+
 
