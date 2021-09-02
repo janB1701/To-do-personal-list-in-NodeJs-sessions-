@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css" />
+</head>
+
+<body>
+    <!-- <div class="small-container">
+        <h1>New Tab App</h1>
+        
+        <form class="form"><input id="item" type="text" placeholder="New" required></form>
+        
+        <h2>Items</h2>
+        <ul class="ul">
+            
+        </ul>
+        <button class="button">Clear All</button>
+        <form class="form2"><input id="item2" type="text" placeholder="Enter what you want to remove"></form>
+        <p class="demo"></p>
+    </div> -->
+    <div class="small-container">
+        <h3><%= name %></h3>
+        <h1>ToDo list</h1>
+
+        <form>
+            <input id="item" type="text" placeholder="New" required />
+        </form>
+
+        <h2>Items</h2>
+        <ul></ul>
+
+        <button>Clear All</button>
+        <p><a href="/login">Login to another acc!</a></p>
+    </div>
+
+    <script>
+        const form = document.querySelector('form')
+        const ul = document.querySelector('ul')
+        const button = document.querySelector('button')
+        const input = document.getElementById('item')
+        let itemsArray = localStorage.getItem('items') ?
+            JSON.parse(localStorage.getItem('items')) :
+            []
+
+        localStorage.setItem('items', JSON.stringify(itemsArray))
+        const data = JSON.parse(localStorage.getItem('items'))
+
+        const liMaker = (text) => {
+            const li = document.createElement('li')
+            li.textContent = text
+            ul.appendChild(li)
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+
+            itemsArray.push(input.value)
+            localStorage.setItem('items', JSON.stringify(itemsArray))
+            liMaker(input.value)
+            input.value = ''
+        })
+
+        data.forEach((item) => {
+            liMaker(item)
+        })
+
+        button.addEventListener('click', function () {
+            localStorage.clear()
+            while (ul.firstChild) {
+                ul.removeChild(ul.firstChild)
+            }
+        })
+    </script>
+</body>
+
+</html>

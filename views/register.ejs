@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/primitive-ui/dist/css/main.css"
+    />
+</head>
+
+<body>
+    <h1>Register yoself</h1>
+    
+
+    <form action="/register" method="POST">
+        <fieldset>
+            <div>
+                <label for="name">Name and lastname: </label>
+                <input type="text" name="fullname" id="fullname">
+            </div>
+            <div>
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password">
+                <label for="password2">Reenter Password: </label>
+                <input type="password" name="password2" id="password2">
+            </div>
+            <!-- <div>Spol
+                <label for="male">M</label>
+                <input type="radio" id="male" name="sex" value="M">
+                <label for="female">F</label>
+                <input type="radio" id="female" name="sex" value="F">
+            </div> -->
+        </fieldset>
+        <input type="submit" value="Predaj podatke!">
+    </form>
+    <p>Allready have an acc? <a href="/login">Login</a></p>
+</body>
+
+</html>
